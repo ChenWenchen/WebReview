@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>~陈厕所HTML5复习笔记~</title>
+	<style>
+		a:link{
+			color: #00AA00;
+		}
+		a:visited{
+			color: #000000;
+		}
+		a:hover {
+			color: #AA0000;
+		}
+		p{
+			border:2px solid #546db7;
+			padding:5px;
+			white-space:pre-wrap;
+			margin:20px 0px;
+		}
+		div{
+			border:2px solid #1bc4c3;
+			padding:5px;
+			white-space:pre-wrap;
+			margin:20px 0px;
+		}
+		em{
+			color:#8a0707;
+		}
+	</style>
+</head>
+<body>
+
+默认对照组文字（我在body中）
+
+<p> <b>&lt !DOCTYPE &gt</b> ：文档类型声明标签，告诉浏览器用哪个HTML版本显示网页 !DOCTYPE html —> HTML5</p>
+<p> <b>&lt html lang="xx" &gt</b> ：当前文档显示语言（en；zh-CN；fr）en会触发浏览器翻译提示？</p>
+<p> <b>&lt meat charset="xx" &gt</b> ：GB2312简体中文&nbspBIG5繁体中文&nbspGBK简繁体国标&nbspUTF-8万国码  </p>
+
+<h1> &lth1&gt这里是h1标签&lt/h1&gt </h1>
+<h2> &lth2&gt这里是h2标签&lt/h2&gt </h2>
+<h3> &lth3&gt这里是h3标签&lt/h3&gt </h3>
+<h4> &lth4&gt这里是h4标签&lt/h4&gt </h4>
+<h5> &lth5&gt这里是h5标签&lt/h5&gt </h5>
+<h6> &lth6&gt这里是h6标签&lt/h6&gt </h6>
+
+<!------------------------------------------------------------------------------------------------->
+<!-----------------------------------------段落标签p、br标签、strong标签----------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<p><strong>&ltp&gt段落标签</strong>
+1、块级元素,会自动在其前后创建一些空白（内外边距）。即使忘用结束标签，大多浏览器也会正确地将 HTML 显示出来。
+2、H5的p元素不支持align属性，用text-align规定文本对齐。
+3、p元素默认按浏览器窗口宽度自动换行
+4、p标签的属性：<strong><em>white-space</em></strong>
+  &emsp;normal	默认。空白会被浏览器忽略。
+  &emsp;pre		空白会被浏览器保留。其行为方式类似 HTML 中的 &ltpre&gt标签。
+  &emsp;nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 &ltbr&gt 标签为止。
+  &emsp;pre-wrap	保留空白符序列，但是正常地进行换行。(之前这几段就是用了pre-wrap哦）
+  &emsp;pre-line	合并空白符序列，但是保留换行符。
+  &emsp;inherit	规定应该从父元素继承 white-space 属性的值。
+
+<strong>&ltbr/&gt强制换行标签</strong>
+&ltbr&gt 与&ltbr/&gt很相似。在 XHTML、XML 以及未来的 HTML 版本中，不允许使用没有结束标签（闭合标签）的 HTML 元素。即使&ltbr&gt在所有浏览器中的显示都没有问题，使用&ltbr/&gt也是更长远的保障。
+	
+<strong>文本格式化标签：</strong>
+<strong>&ltstrong&gt加粗</strong>（&ltb&gt也可）
+<em>&ltem&gt倾斜</em>	（&lti&gt也可）
+<del>&ltdel&gt删除线</del>	（&lts&gt也可）
+<ins>&ltins&gt下划线</ins>	（&ltu&gt也可）
+1、根据 HTML 5 的规范，<b>&ltb&gt</b>标签应该做为最后的选择，只有在没有其他标记比较合适时才使用它。HTML 5 规范声明：标题应该用 &lth1&gt -&lth6&gt 标签表示，被强调的文本应该用 <em>&ltem&gt </em>标签表示，重要的文本应该用<strong>&ltstrong&gt</strong>标签表示，被标记的或者高亮显示的文本应该用<mark>&ltmark&gt</mark>标签表示。
+2、也可以使用 CSS 的 "font-weight" 属性设置粗体文本。
+</p>
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------div 和 span------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<div><strong>&ltdiv&gt标签</strong>和<strong>&ltspan&gt标签</strong>
+1、本身无语义，纯粹是装载内容的盒子元素。
+2、div是块级元素，span是行内元素。
+<div>div1<span>-span1-</span><span>-span2-</span></div><div id="p2">&ltdiv2 id="p2"&gt这里有个锚点&lt/div&gt</div></div>
+<!------------------------------------------------------------------------------------------------->
+<!-----------------------------------------图片标签img-------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<p><strong>&ltimg&gt图像标签</strong>有两个必需的属性：src 和 alt
+<img src="img/img1.jpg" title="这里是图片1title" alt="图片加载不了哦,这句提示是用alt写的" width="300px" style="border:2px solid black"/>
+<img src="img1.jpg" title="这里是图片2title" alt="图片加载不了哦,这句提示是用alt写的" width="300px" style="border:2px solid black"/>
+1、严格说，图像不插入 HTML 页面，而是链接到HTML页面上。&ltimg&gt标签的作用是为被引用的图像创建占位符。
+2、通过在 &lta&gt 标签中嵌套 &ltimg&gt 标签，给图像添加到另一个文档的链接。
+3、<em>alt</em> 属性是在图片不能正常显示时出现的文本提示；
+  &emsp;<em>title</em> 属性是在鼠标在移动到元素上的文本提示；
+  &emsp;<em>crossorigin</em>图像的跨域属性。
+4、一般只修改<em>width</em>或者<em>height</em>，图片自动等比例缩放。
+5、可用<em>border</em>属性设置边框。
+6、<img src="img/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap"/>图片热区——当鼠标指向图片的不同部位时,可以打开不同的超链接。
+   <map style="white-space:normal" name="planetmap">
+	  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm" target="_blank">
+	  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm" target="_blank">
+	  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm" target="_blank">
+	</map><a href="https://www.runoob.com/tags/tag-img.html" target="_blank">菜鸟教程img标签参考链接</a>
+</p>
+<!------------------------------------------------------------------------------------------------->
+<!----------------------------------------超链接标签--------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<p><strong>&lta&gt超链接标签</strong>
+1、有:link :visited :hover :active 4种伪类(要按顺序哦);
+2、&lta href=""&gt&ltimg src=""/&gt&lt/a&gt实现图片链接，表格/音频/视频等都可以<a href="http://baidu.com" target="_blank"><img src="img/img1.jpg" title="图片链接去百度" width="50px"></a>
+
+<a href="http://baidu.com" target="_blank">外部链接——百度</a>
+<a href="testLink.html" target="_blank">内部链接——testLink.html</a>
+<a href="#" target="_blank">暂空链接——href="#"默认是指回自己页面？</a>
+<a href="#p2" >锚点链接——href="#p2"定位到页面的某个位置</a>(用元素id定位）会改变url，再次刷新会有问题，想避免得用js或jq写
+(注意浏览器输入 <a href="index.html#p2" target="_blank">index.html#p2</a> 这样的地址也可锚点定位,#代表网页中的一个位置)
+
+<a id="a1" href="#p2" >&lta id="a1" href="#p2"&gt试试不改url的锚点跳转&lt/a&gt</a>
+--------------------------------------------
+&ltscript&gt 	
+	var a = document.getElementById('a1');
+	a.addEventListener('click',function(e){
+		//阻止a标签的默认行为
+		e = e || window.event;
+		e.preventDefault();
+		//获取整个href路径
+		//var target = this.href;
+		//获取#片段识别符
+		var target = this.hash;
+		//获取该锚点的位置
+		var offsetTop = document.querySelector(target).offsetTop;
+		//用原生js滚动页面
+		document.documentElement.scrollTop = offsetTop;
+	})
+	
+	//jq写法
+	//$('a').on('click',function(e){
+		//阻止a标签的默认行为跳转,这样就不会把#判断符带入到url中
+		//e = e || window.event;
+		//e.preventDefault();
+		// 获取id号,得到是#box1
+		//var target = $(this).prop('hash');
+		//将页面滚动到对应的位置
+		//$('html,body').scrollTop($(target).offset().top);
+	//});
+	
+&lt/script&gt
+--------------------------------------------
+<script>
+	var a = document.getElementById('a1');
+	a.addEventListener('click',function(e){
+		//阻止a标签的默认行为
+		e = e || window.event;
+		e.preventDefault();
+		//获取整个href路径
+		//var target = this.href;
+		//获取#片段识别符
+		var target = this.hash;
+		//获取该锚点的位置
+		var offsetTop = document.querySelector(target).offsetTop;
+		//用原生js滚动页面
+		document.documentElement.scrollTop = offsetTop;
+	})
+</script>
+<a href="res/测试下载.txt" target="_blank">下载链接——测试下载.txt</a>
+<a href="res/测试下载.zip" target="_blank">下载链接——测试下载.zip</a>
+下载链接——地址链接的是文件（.exe或.zip等等文件资源)。txt可以被浏览器解读所以直接打开了，html同理
+
+<strong>相对路径：从一个目录为起点到你所在的目录</strong>（注意是反斜杠/)
+<a href="testLink.html" target="_blank">testLink.html		默认是同一目录下的资源（同级路径）</a>
+<a href="res/testLink2.html" target="_blank">res/testLink.html	默认是同一目录下的资源（下级路径）</a>
+<a href="../testLink.html" target="_blank">../testLink.html	查找上级目录（上级路径）</a>
+<a href="../../testLink.html" target="_blank">../../testLink.html	查找上两级目录</a>
+
+<strong>绝对路径：从根目录为起点到你所在的目录</strong>（注意是斜杠\)
+<a href="C:\Users\lenovo\Desktop\HTML_Review\testLink.html" target="_blank">C:\Users\lenovo\Desktop\HTML_Review\testLink.html</a>
+注意绝对路径在不同电脑下是不同滴
+<a href="http://chenwenchen.top:8080/TeacherTool" target="_blank">http://chenwenchen.top:8080/TeacherTool</a>
+完整的网络地址也属于绝对路径，相当于网络上的绝对地址
+
+<strong>测试4种<em>target</em> 属性</strong>
+<a href="http://chenwenchen.top:8080/TeacherTool" >a标签超链接1（target=默认_self）</a>
+<a href="http://chenwenchen.top:8080/TeacherTool" target="_blank">a标签超链接2（target=_blank）</a>
+<a href="http://chenwenchen.top:8080/TeacherTool" target="_top">a标签超链接3（target=_top）</a>
+<a href="http://chenwenchen.top:8080/TeacherTool" target="_parent">a标签超链接4（target=_parent）</a>
+</p>
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------注释和转义符------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<p><strong>注释标签</strong>
+&lt!--注释内容xxx--&gt<!--注释标签-->
+<strong><a href="https://www.cnblogs.com/yasmi/articles/4884396.html" target="_blank">特殊字符</a></strong>
+&amp	————  &ampamp
+&lt	————  &amplt
+&gt	————  &ampgt
+半方空格&ensp;———— &ampensp
+全方空格&emsp;———— &ampemsp
+不断行空格&nbsp;——— &ampnbsp
+</p>
+<!------------------------------------------------------------------------------------------------->
+<!------------------------------------------表格标签------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+<div><strong>表格标签&lttable&gt</strong>
+1、用于展示数据，不要用于布局
+2、&lttr&gt是行；&lttd&gt是普通单元格；&ltth&gt是表头单元格（默认居中加粗）
+3、<em>align,bgcolor,frame,cellspacing,cellpadding,width</em>这些属性H5都已弃用，最好用CSS来控制
+4、<em>align</em>是整个表格在页面中的对齐，不是内部文字的text-align
+5、<em>cellspacing</em>是单元格彼此间距离；
+6、<em>cellpadding</em>是单个单元格内边距；
+7、<em>border</em>属性可以"" 或者 "1"
+8、<em>style="border-collapse:_______"</em> 注意这里已经在用css了哦————可填collapse或separate或inherit
+9、由于是块级元素，所以可以用<em>width、height</em> 属性设置宽高
+10、<em>cellspacing</em>貌似没用了，<em>cellpadding</em>和<em>align</em>还是有用的（谷歌浏览器测试）
+
+<table border="1" align="center" cellpadding="15px" width="300px" height="200px" style="border-collapse:collapse;">
+<tr>
+	<th>Month</th>
+	<th>Savings</th>
+</tr>
+<tr>
+	<td>January</td>
+	<td>$100</td>
+</tr>
+<tr>
+	<td>February</td>
+	<td>$120</td>
+</tr>
+<tr>
+	<td>March</td>
+	<td>$130</td>
+</tr>
+</table>
+------------------------------------------------------
+&lttable border="1" align="center" cellpadding="15px" width="300px" height="200px" style="border-collapse:collapse;"&gt
+&lttr&gt
+	&ltth&gtMonth&lt/th&gt
+	&ltth&gtSavings&lt/th&gt
+&lt/tr&gt
+&lttr&gt
+	&lttd&gtJanuary&lt/td&gt
+	&lttd&gt$100&lt/td&gt
+&lt/tr>
+&lttr>
+	&lttd&gtFebruary&lt/td&gt
+	&lttd&gt$120&lt/td&gt
+&lt/tr&gt
+&lttr&gt
+	&lttd&gt&gtMarch&lt/td&gt
+	&lttd&gt$130&lt/td&gt
+&lt/tr&gt
+&lt/table&gt
+------------------------------------------------------
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
