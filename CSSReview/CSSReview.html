@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>~陈厕所CSS复习笔记~</title>
+		<style>
+			.code {
+				color:darkgreen; 
+				white-space: pre-wrap; 
+				font-weight: 600;
+			}
+			.attr{
+				font-style: italic;
+				font-weight: 800;
+				color: #8a0707;
+			}
+			p { 
+				white-space: pre-wrap;
+				font-size: 16px; 
+			}
+			div{
+				width: 50px;
+				height: 50px;
+			}
+			div.red{
+				background-color: red;
+			}
+			div.green{
+				background-color: green;
+			}
+			div.box{
+				border: 1px solid black;
+			}
+			*{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<h3>HTML 关注语义、内容、结构</h3>
+		<h3>CSS  关注样式、外观</h3>
+		
+		<p>HTML可以在标签中用属性来简单设置样式，但是每个元素都设置会太繁琐</p>
+		<p>CSS————层叠样式表。设置文本的字体、大小、对齐方式；设置图片的外形宽高边框；版面的布局、外观显示样式</p>
+		<p>尽可能让结构（HTML）与样式（CSS）分离</p>
+			
+		<h3>CSS规则 = 选择器 + 一条或多条{属性：属性值}的声明</h3>
+		
+		<p>引入方法1：行内样式：在标签中设置style属性</p>
+		<p class="code">
+		&lt;p style="color: darkblue;"&gt; xxxxxx &lt;/p&gt;
+		</p>
+		
+		<p>引入方法2：内部样式表（内嵌）：用css&lt;style&gt;标签<strong>写在&lt;head&gt;标签中</strong></p>
+		<p class="code">
+		&lt;style&gt;   
+			p {
+					color: darkblue;
+					font-size: 16px; 
+			}
+		&lt;/syle&gt;
+		</p>
+		
+		<p>引入方法3：外部样式表（外导）：css代码保存在.css文件中，链接式或导入式加入页面
+		
+		1、link引用CSS时，在页面载入时同时加载；@import需要页面完全载入后才加载。
+		2、link支持使用JavaScript控制DOM去改变样式；@import不支持这样的操作
+		（JavaScript可以获取link标签元素，但获取不到@import，因为@import只是一种CSS语法）。</p>
+		
+		<p class="code">
+		&lt;link  rel="styleSheet"  href="CSS文件路径" /&gt; 
+		
+		&lt;style type="text/css" &gt;   
+			@import ulr("css_url")
+		&lt;/syle&gt;
+		</p>
+		
+		<h3>CSS基础选择器</h3>
+		<strong>标签选择器</strong>———用标签名选择所有的某种标签
+		<p class="code">p { color: darkblue;  font-size: 16px; }</p>
+		
+		<strong>类选择器</strong>————按标签的class属性单独选一个或某几个，实现差异化
+		<p class="code">.myClass { color: darkblue; }</p>
+		
+		<strong>ID选择器</strong>————按照标签的id属性选择某一个（注意ID有唯一性）
+		<p class="code">#myId { color: darkblue; }</p>
+		
+		<strong>通配符选择器</strong>————用*选择页面中所有元素
+		<p class="code"> * { margin:0; padding:0; }</p>
+		
+		结合使用标签选择器和类选择器
+		<p class="code">div.red {  background-color: red; }
+div.green {  background-color: green; }
+div.box {  border:1px solid black; }
+		</p>
+		
+		<div class="red box"></div>
+		<div class="green box"></div>
+		<div class="red box"></div>
+		
+		
+		
+		<h3>CSS-字体属性</h3>
+		<span class="attr">font-family</span> : <span style="font-family: '微软雅黑';">"微软雅黑"</span> <span style="font-family:'宋体';">，“宋体”</span><span style="font-family: 'Times New Roman';">，"Times New Roman"</span><br/>
+		字体属性是可以填多个，用逗号隔开，浏览器会按顺序查找直到使用系统默认。<br/>
+		'Microsoft YaHei',tahoma,arial,'Hiragino Sans GB'。可以设在body中。<br/>
+		
+		<h3>CSS-字体大小</h3>
+		<span class="attr">font-family</span> : 
+		<span>默认，</span>
+		<span style="font-size: 16px;">16px，</span>
+		<span style="font-size:26px";">26px</span><br/>
+		字体属性是可以填多个，用逗号隔开，浏览器会按顺序查找直到使用系统默认。<br/>
+		标题标签字体较特殊，需要单独指定文字大小。<br/>
+		
+		<h3>CSS-字体粗细</h3>
+		<span class="attr">font-weight</span> : 
+		<span>默认，</span>
+		<span style="font-weight: bold;">bold，</span>
+		<span style="font-weight: bolder;">bolder，</span>
+		<span style="font-weight: lighter;">lighter，</span><br/>
+		可以赋500/700这些值,400等同于normal。<br/>
+		标题标签字体较特殊，需要单独指定文字大小。<br/>  
+		
+		<h3>CSS-字体样式风格</h3>
+		<span class="attr">font-style</span> : 
+		<span>默认，</span>
+		<span style="font-style: initial;">initial，</span>
+		<span style="font-style: italic;">italic，</span>
+		<span style="font-style: oblique;">oblique</span><br/> 
+		实际中很少加倾斜，反而是给em，i清除倾斜。<br/>
+		  
+		<h3>CSS-字体复合属性写法</h3>
+		 只能按照顺序————风格、粗细、大小、字体。且size和family不能省略<br/>
+		<span style="font: italic bold 20px 'Microsoft Yahei'">font： italic bold 20px 'Microsoft Yahei'</span> : 
+		
+		<h3>CSS-文字颜色</h3>
+		<span style="color: pink">color:pink</span> <br/>
+		<span style="color: #546DB7">color:#546DB7</span> <br/>
+		<span style="color: rgb(200,100,0)">color: rgb(250,100,0)或rgb(100%,0,)</span>  
+		
+		<h3>CSS-文本对齐</h3>
+		<span class="attr">text-align</span> 设置水平方向上的对齐方式 ,只对块级元素设置有效哦<br/>
+		<span style="text-align: center; border: 1px solid black;">span 设置 text-align: center</span>
+		<p style="text-align: center; border: 1px solid black;">text-align: center</p>
+		<p style="text-align: left; border: 1px solid black;">text-align: left</p>  
+		<p style="text-align: right; border: 1px solid black;">text-align: right</p>  
+		
+		<h3>CSS-文本装饰</h3>
+		<span class="attr">text-decoration</span> 给文本添加下划线、删除线、上划线等。默认none，可以去掉a标签默认的下划线。<br/><br/>
+		<span style="text-decoration: underline">text-decoration: underline</span> 
+		<span style="text-decoration: overline">text-decoration: overline</span> 
+		<span style="text-decoration:line-through">text-decoration:line-through</span>  
+		
+		<h3>CSS-文本首行缩进</h3>
+		<span class="attr">text-indent</span> 指定文本第一行的缩进。可以正负若干px，缩进1em是当前元素中一个文字的大小。 <strong>只对块级元素有效</strong>
+		<p style="text-indent: -20px ">这一行text-indent:-20px</p>
+		<p style=" ">这一行默认</p>
+		<p style="text-indent: 2em ">这一行text-indent: 2em</p> 
+		
+		<h3>CSS-文本行间距(行高)</h3>
+		<span class="attr">line-height</span> 行间距=上间距+文本高度+下间距。 <strong>只对块级元素有效</strong>
+		<p style="line-height: 40px; border: 1px dashed black;">这一行line-height:40px</p>
+		<p style=" border: 1px dashed black;">这一行默认</p>
+		<p style="line-height: 10px; border: 1px dashed black;">这一行line-height:10px</p> 
+	</body>
+</html>
